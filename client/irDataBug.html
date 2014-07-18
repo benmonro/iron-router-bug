@@ -1,0 +1,26 @@
+<head>
+  <title>irDataBug</title>
+</head>
+
+<body>
+
+</body>
+
+<template name="home">
+
+	{{>quickForm collection="People" id="insertPersonForm" type="insert"}}
+	<ul>
+{{#each people}}
+{{pathFor 'person'}}
+<!-- <li> -->
+<a href="/person/{{_id}}">{{name}}</a>
+<!-- </li> -->
+{{/each}}
+	</ul>
+
+</template>
+
+<template name="person">
+	The person's name is {{name}}<br /> <a href="/">back</a>
+	</template>
+
